@@ -4,8 +4,7 @@ One-command, interactive installer for **PyTorch on NVIDIA Jetson (aarch64)**.
 Supports JetPack **5.1.1 / 5.1.2** and **6.0 / 6.1 / 6.2** lines, installs **cuSPARSELt** first when required, and validates the install.
 
 ## What this repo contains
-- `install_cusparselt.sh` – robust cuSPARSELt installer for Jetson
-- `install_pytorch_jetson.sh` – interactive PyTorch installer that:
+  - `install_pytorch_jetson.sh` – interactive PyTorch installer that:
   - asks for your **JetPack** code (`511`, `512`, `60`, `61`, `62`)
   - selects a **sane default wheel URL** you can override
   - installs **cuSPARSELt** first for JP ≥ 6.0
