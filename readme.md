@@ -1,4 +1,4 @@
-# Jetson PyTorch Installer (with cuSPARSELt)
+# Jetson PyTorch Installer for Orin Nano
 
 One-command, interactive installer for **PyTorch on NVIDIA Jetson (aarch64)**.  
 Supports JetPack **5.1.1 / 5.1.2** and **6.0 / 6.1 / 6.2** lines, installs **cuSPARSELt** first when required, and validates the install.
