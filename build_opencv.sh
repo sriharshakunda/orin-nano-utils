@@ -4,7 +4,7 @@ trap 'echo "ERROR: ${BASH_SOURCE[0]} failed on line ${LINENO}"; exit 1' ERR
 
 # Tunables
 PREFIX=/usr/local
-OPENCV_VER="${1:-4.10.0}"     # override with: ./build_opencv.sh 4.10.0
+OPENCV_VER="${1:-4.12.0}"     # override with: ./build_opencv.sh 4.10.0
 JOBS=$(nproc)
 CUDA_ARCH_BIN="${CUDA_ARCH_BIN:-8.7}"  # Orin=8.7; Xavier=7.2; Nano=5.3
 
@@ -102,6 +102,6 @@ main() {
   configure_build
   build_and_install
   cleanup_prompt
-  say "Done. Verify with: python3 -c 'import cv2; bi=cv2.getBuildInformation(); print("OpenCV", cv2.__version__, "| built_with_cuda=", ("YES" if "NVIDIA CUDA: YES" in bi else "NO"), "| cudnn=", ("YES" if "cuDNN: YES" in bi else "NO"), "| cuda_module=", ("YES" if hasattr(cv2,"cuda") else "NO"), "| cuda_devices=", (cv2.cuda.getCudaEnabledDeviceCount() if hasattr(cv2,"cuda") else 0))'"
+  echo "Done. Verify with: python3 -c 'import cv2; bi=cv2.getBuildInformation(); print("OpenCV", cv2.__version__, "| built_with_cuda=", ("YES" if "NVIDIA CUDA: YES" in bi else "NO"), "| cudnn=", ("YES" if "cuDNN: YES" in bi else "NO"), "| cuda_module=", ("YES" if hasattr(cv2,"cuda") else "NO"), "| cuda_devices=", (cv2.cuda.getCudaEnabledDeviceCount() if hasattr(cv2,"cuda") else 0))'"
 }
 main "$@"
